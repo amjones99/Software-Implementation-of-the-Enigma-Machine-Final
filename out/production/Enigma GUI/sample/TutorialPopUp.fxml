@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="0.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TutorialPopUpController">
+   <children>
+      <ScrollPane prefHeight="700.0" prefWidth="620.0">
+        <content>
+          <AnchorPane fx:id="mainScene" minHeight="0.0" minWidth="0.0" prefHeight="220.0">
+               <children>
+                  <AnchorPane fx:id="TutorialHome" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;">
+                     <children>
+                        <JFXButton layoutX="14.0" layoutY="14.0" onAction="#toHome" text="Home">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="34.0" layoutY="42.0" onAction="#toAppFeatures" text="Application Features">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="34.0" layoutY="70.0" onAction="#toEnigmaEnc" text="Enigma Machine Encryption">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="34.0" layoutY="98.0" onAction="#toDeciphering" text="Deciphering a Message">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="485.0" layoutY="146.0" onAction="#toClosedHood" style="-fx-border-color: #000000;" text="Closed Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="AppFeatures" layoutY="44.0" prefHeight="156.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <JFXButton layoutX="34.0" layoutY="-2.0" onAction="#toAppFeatures" text="Application Features">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="54.0" layoutY="26.0" onAction="#toClosedHood" text="Closed Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="54.0" layoutY="54.0" onAction="#toOpenHood" text="Open Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="490.0" layoutY="102.0" onAction="#toClosedHood" style="-fx-border-color: #000000;" text="Closed Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ClosedHood" layoutY="72.0" prefHeight="868.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <JFXButton layoutX="54.0" layoutY="-2.0" onAction="#toClosedHood" text="Closed Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="500.0" layoutY="72.0" onAction="#toOpenHood" style="-fx-border-color: #000000;" text="Open Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="23.0" layoutY="647.0" prefHeight="202.0" prefWidth="573.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-width: 3px;" text="1) Keyboard&#10;2) Lampboard &#10;3) Input Journal&#10;4) Output Journal&#10;5) Clear Button&#10;6) Backspace Button&#10;7) Open Rotor Position Panel Button&#10;8) Open Machine Hood Button&#10;9) View Plugboard Button&#10;10) Menu Button&#10;11) Current Rotor Positions" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="#ffffff00" layoutX="188.0" layoutY="651.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="194.0" prefWidth="399.0" text="(Either click with mouse or type respective key on keyboard)&#10;(Result of current encryption lights up. Hold key to keep lit)&#10;(A record of the pre-encrypted message)&#10;(A record of the encrypted message)&#10;(Clears the journals)&#10;(Go back 1 encryption step. Alternatively use backspace key on keyboard)&#10;&#10;&#10;&#10;&#10;(Open the Rotor Position Panel to edit these manually)" unFocusColor="#4d4d4d00">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </JFXTextArea>
+                        <ImageView fitHeight="529.0" fitWidth="467.0" layoutX="91.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Tutorial%20Images/Closed%20Hood%20Labelled.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="OpenHood" layoutY="72.0" prefHeight="808.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <JFXButton layoutX="54.0" layoutY="-2.0" onAction="#toOpenHood" text="Open Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="448.0" layoutY="72.0" onAction="#toEnigmaEnc" style="-fx-border-color: #000000;" text="Enigma Encryption">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="16.0" layoutY="72.0" onAction="#toClosedHood" style="-fx-border-color: #000000;" text="Closed Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="23.0" layoutY="653.0" prefHeight="140.0" prefWidth="573.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-width: 3px;" text="1) The 3 Rotors&#10;2) Edit Rotor Setup Button&#10;3) Reflector&#10;4) Lampboard&#10;5) Close Hood Button&#10;6) Encryption View" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma Bold" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="#ffffff00" layoutX="219.0" layoutY="656.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="140.0" prefWidth="371.0" text="&#10;(Click this to edit the rotor selection and inner-ring settings)&#10;&#10;&#10;(Return to normal view)&#10;(Toggle whether you would like to view the encryption path of your current encryption or not. Explained further on next page)" unFocusColor="#4d4d4d00">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </JFXTextArea>
+                        <ImageView fitHeight="514.0" fitWidth="430.0" layoutX="101.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Tutorial%20Images/Open%20Hood%20Labelled.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="EnigmaEnc" layoutY="44.0" prefHeight="900.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <ImageView fitHeight="514.0" fitWidth="424.0" layoutX="101.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Tutorial%20Images/Encryption%20Path.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="34.0" layoutY="-2.0" onAction="#toEnigmaEnc" text="Enigma Machine Encryption">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="54.0" layoutY="26.0" onAction="#toRotors" text="Rotors &amp; the Reflector">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="54.0" layoutY="54.0" onAction="#toPlug" text="Plugboard">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="422.0" layoutY="102.0" onAction="#toRotors" style="-fx-border-color: #000000;" text="Rotors &amp; the Reflector">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="16.0" layoutY="102.0" onAction="#toOpenHood" style="-fx-border-color: #000000;" text="Open Hood">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="26.0" layoutY="650.0" prefHeight="223.0" prefWidth="554.0" text="Below is a brief explanation of the path the encryption takes through the Enigma Machine (with reference to the example above):&#10;&#10;When a key is pressed the current signal is passed through the plugboard, being switched if the letter is paired (G-&gt;M). The signal is then sent through the rotors from right to left until is reaches the reflector (M-&gt;W-&gt;X-&gt;F). &#10;&#10;At the reflector the signal is sent through a simple substitution cipher (F-&gt;S) and then sent back through the 3 rotors from left to right (S-&gt;J-&gt;U-&gt;K). Finally the signal is sent back through the plugboard (K-&gt;E) and the result of the encryption is displayed by lighting the corresponding lamp on the lampboard.&#10;&#10;The methods of encryption used by the plugboard, rotors and reflector will be explained further in the next 2 chapters." unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="Rotors" layoutY="72.0" prefHeight="840.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <JFXButton layoutX="54.0" layoutY="-2.0" onAction="#toRotors" text="Rotors &amp; the Reflector">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="16.0" layoutY="72.0" onAction="#toEnigmaEnc" style="-fx-border-color: #000000;" text="Enigma Encryption">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="507.0" layoutY="72.0" onAction="#toPlug" style="-fx-border-color: #000000;" text="Plugboard">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="36.0" layoutY="556.0" text="The Reflector">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="36.0" layoutY="139.0" text="The Rotors">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="53.0" layoutY="171.0" prefHeight="384.0" prefWidth="523.0" text="The Enigma-1/Enigma M3 model that this application simulates used 3 rotors out of a possible 5 different rotors to encrypt messages that can be used in any order (60 different rotor combinations). Each rotor consists of an inner-ring that contains 13 pairs of wired connections and an outer ring that displays the current position of the rotor. Each rotor also has a carry (or turnover) notch at a position on its outer ring (different position on each of the 5 rotors).&#10;&#10;After a key is pressed, the right-most rotor is rotated 1 position before the signal reaches the that rotor. If this rotor passes over its carry notch on rotation, it forces the central rotor to also rotate 1 position which would force the left most rotor to also rotate 1 position if it also passes over its carry notch. As an additional rotation feature, a &quot;double-step&quot; is introduced when the central rotor is rotated by the right-most rotor to 1 rotation away from passing its carry notch, it will also be forced. to rotate on the next key press. Try this yourself encrypting 2 letters using rotors I, II and III (from left to right) in the respective positions of A, D and V to see this in action yourself.&#10;The rotation mechanism of the Enigma Machine meant that the encryption was constantly changing on each key press.&#10;&#10;When a signal entered the rotor, it would pass through wire determined by the inner-ring setting and the current rotor position and follow that wire through the rotor and move on to the next encryption step as the encrypted signal. The inner and outer rings could both each be manually adjusted to 26 different starting positions, meaning that number of rotor configurations for this model of the Enigma Machine was over 18.5 billion!" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="53.0" layoutY="601.0" prefHeight="194.0" prefWidth="523.0" text="The Reflector on the other hand was far more simplistic. Like the rotors it contained 13 pairs of wired connections however these connections could not be manually adjusted nor would the reflector ever rotate meaning it just contained a simple substition cipher that would send the signal back through the rotors. The Enigma-1/Enigma M3 model used the Reflector version B only.&#10;&#10;The sole purpose of the reflector and sending the signal back through the rotors was to ensure that a letter entered into the machine could not be encrypted to itself however this became a flaw for the Germans as Enigma Code Breakers used the fact that this limited the number of possibilities for a letter in a message from 26 to 25 which whilst seeming only a very small difference was very costly when used to decipher long messages." unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="Plug" layoutY="72.0" prefHeight="430.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <JFXButton layoutX="54.0" layoutY="-2.0" onAction="#toPlug" text="Plugboard">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="417.0" layoutY="72.0" onAction="#toDeciphering" style="-fx-border-color: #000000;" text="Deciphering a Message">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="16.0" layoutY="72.0" onAction="#toRotors" style="-fx-border-color: #000000;" text="Rotors &amp; the Reflector">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="36.0" layoutY="139.0" text="The Plugboard">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="53.0" layoutY="171.0" prefHeight="251.0" prefWidth="523.0" text="The final encryption feature of this Enigma model was the Plugboard. It allowed the addition of cables to create up to 13 pairs of letters. If a letter (signal) was paired on the plugboard, it would be switched for its counterpart by passing through the cable, otherwise the the letter would pass through the plugboard unaltered.&#10;&#10;Up 13 pairs could be created however the standard number of pairs used for a message was 10. It is possible to calculate the total number of different combinations by using the following formula:&#10;&#10;        26!  /  ((26 - 2n)! * n! * (2^n))       where n is the number of pairs&#10;&#10;The total number of possible combinations for 10 pairs would be over 150 trillion meaning that with 10 pairs connected on the plugboard, the total number of possible setup configurations for this enigma machine is over 2.7 septillion!" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="Deciphering" layoutY="44.0" prefHeight="920.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" visible="false">
+                     <children>
+                        <JFXButton layoutX="34.0" layoutY="-2.0" onAction="#toDeciphering" text="Deciphering a Message">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="16.0" layoutY="102.0" onAction="#toPlug" style="-fx-border-color: #000000;" text="Plugboard">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="34.0" layoutY="150.0" prefHeight="319.0" prefWidth="542.0" text="When deciphering a message you will be provided with the following information:&#10;&#10;Enigma Configuration for the day - &#10;Rotors Used | Inner-Ring Settings | Plugboard Pairs&#10;&#10;Intercepted Message -&#10;Initial Rotor Position and Encrypted Message Key = Message&#10;&#10;&#10;Open the Hood of the Enigma Machine, then click one of the &#10;3 &quot;Edit Rotor Setup&quot; buttons (to the left of the rotor position &#10;on each rotor) to open the Rotor Setup Popup. Enter the &#10;configurations accordingly as shown in the image to the right.&#10;Submit your changes by clicking the button on the &#10;bottom-right of the popup.&#10;&#10;" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                        <ImageView fitHeight="123.0" fitWidth="235.0" layoutX="358.0" layoutY="759.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Tutorial%20Images/Rotor%20Position%20Panel.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="123.0" fitWidth="226.0" layoutX="369.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Tutorial%20Images/RotorSelection.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="280.0" layoutX="34.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Tutorial%20Images/Plugboard.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="34.0" layoutY="268.0" text="Rotors Used and Inner-Ring settings: (e.g. V III IV | 2 23 17)">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="298.0" layoutY="440.0" text="Plugboard Pairs: (e.g. CU JR DO)">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="298.0" layoutY="459.0" prefHeight="167.0" prefWidth="282.0" text="Click the &quot;View Plugboard&quot; button (directly below the keyboard). &#10;To create a pair, click on an empty plug (it should change colour) and click on another empty plug, a pair will be confirmed by both plugs being the same colour and each plug displaying its corresponding paired letter. To remove a pair, simply click on one of the plugs from the pair you are removing." unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                        <Label layoutX="26.0" layoutY="616.0" text="Initial Rotor Position and Encrypted Message Key">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="636.0" text="(e.g. BER CSR)">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="24.0" layoutY="653.0" prefHeight="133.0" prefWidth="560.0" text="In order to hide the rotor positions (message key) that would decipher the message, a initial rotor position would be sent along with an encrypted message key in the telegram. In order to obtain the true message key, you would set up the enigma configuration for that day (above), set the rotor position to the inital rotor positions and enter the encrypted message key. The result of this encryption would be the 3 rotor positions for the message key. Then you would set the rotor positions to the message key and enter message shown after the &quot;=&quot; sign.&#10;" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                        <JFXTextArea editable="false" focusColor="#405aa800" layoutX="24.0" layoutY="776.0" prefHeight="82.0" prefWidth="320.0" text="To manually adjust the rotor positions, click the &quot;Open Rotor Position Panel&quot; button (above the lampboard) and use the arrows to turn the rotors.&#10;" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font></JFXTextArea>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

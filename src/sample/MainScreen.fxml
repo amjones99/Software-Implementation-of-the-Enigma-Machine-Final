@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPress" onKeyReleased="#keyRelease" prefHeight="700.0" prefWidth="650.0" stylesheets="@MainScreen.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
+   <top>
+      <AnchorPane prefHeight="73.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="88.0" layoutY="11.0" text="ENIGMA MACHINE SIMULATION">
+               <font>
+                  <Font name="Calibri Bold" size="39.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="menuBtn" layoutX="15.0" layoutY="17.0" onAction="#menuBtnClick" prefHeight="50.0" prefWidth="50.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <VBox fx:id="menuTab" prefHeight="527.0" prefWidth="109.0" spacing="20.0" visible="false" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="tutorial" onAction="#openTutorialPopUp" styleClass="menuLink" text="Tutorial" />
+            <JFXButton fx:id="examples" onAction="#openExamplePopUp" styleClass="menuLink" text="Examples" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" right="10.0" top="40.0" />
+         </padding></VBox>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="130.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutX="55.0" layoutY="40.0" onKeyPressed="#keyPress" onKeyReleased="#keyRelease" prefHeight="85.0" prefWidth="260.0" styleClass="journal" text="${controller.inputBox}" unFocusColor="#4d4d4d00" wrapText="true" />
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutX="325.0" layoutY="40.0" onKeyPressed="#keyPress" onKeyReleased="#keyRelease" prefHeight="85.0" prefWidth="260.0" styleClass="journal" text="${controller.outputBox}" unFocusColor="#4d4d4d00" wrapText="true">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></JFXTextArea>
+            <JFXButton buttonType="RAISED" layoutX="271.0" layoutY="10.0" onAction="#clearBtnClick" text="Clear" />
+            <JFXButton buttonType="RAISED" layoutX="513.0" layoutY="10.0" onAction="#backBtnClick" text="Backspace" />
+            <JFXToggleButton fx:id="encryptionView" layoutX="39.0" layoutY="-11.0" onMouseReleased="#toggleView" text="Encryption View" toggleColor="#428f00" toggleLineColor="#92c278" visible="false" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="533.0" prefWidth="504.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle fill="#1a1a1a" height="8.0" layoutX="68.0" layoutY="325.0" rotate="-15.6" stroke="TRANSPARENT" strokeType="INSIDE" width="22.0" />
+            <Rectangle fill="#1a1a1a" height="8.0" layoutX="424.0" layoutY="325.0" rotate="15.6" stroke="TRANSPARENT" strokeType="INSIDE" width="22.0" />
+            <Rectangle fill="#1a1a1a" height="8.0" layoutX="71.0" layoutY="328.0" stroke="TRANSPARENT" strokeType="INSIDE" width="371.0" />
+            <AnchorPane layoutX="67.0" layoutY="41.0" prefHeight="287.0" prefWidth="380.0" style="-fx-background-color: #333333; -fx-border-color: #000000;">
+               <children>
+                  <AnchorPane layoutX="6.0" layoutY="15.0" prefHeight="264.0" prefWidth="368.0" style="-fx-background-color: #4d4d4d; -fx-border-color: black;">
+                     <children>
+                        <Rectangle fill="WHITE" height="132.0" layoutX="140.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="8.0" />
+                        <Rectangle fill="WHITE" height="132.0" layoutX="244.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="8.0" />
+                        <Rectangle fill="WHITE" height="132.0" layoutX="192.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="8.0" />
+                        <Rectangle fill="#1a1a1a" height="142.0" layoutX="200.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
+                        <Rectangle height="146.0" layoutX="313.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="52.0" />
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="79.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="18.0" style="-fx-font-size: 12px;" styleClass="rotorPosViewUnder" text="${controller.rightPosDown1}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="18.0" style="-fx-font-size: 11px;" styleClass="rotorPosViewUnder" text="${controller.rightPosDown2}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="18.0" style="-fx-font-size: 10px;" styleClass="rotorPosViewUnder" text="${controller.rightPosDown3}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="18.0" style="-fx-font-size: 9px;" styleClass="rotorPosViewUnder" text="${controller.rightPosDown4}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="18.0" style="-fx-font-size: 12px;" styleClass="rotorPosViewUnder" text="${controller.rightPosUp1}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="18.0" style="-fx-font-size: 11px;" styleClass="rotorPosViewUnder" text="${controller.rightPosUp2}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_CENTER" layoutX="224.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="18.0" style="-fx-font-size: 10px;" styleClass="rotorPosViewUnder" text="${controller.rightPosUp3}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="18.0" style="-fx-font-size: 9px;" styleClass="rotorPosViewUnder" text="${controller.rightPosUp4}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <JFXButton buttonType="RAISED" layoutX="203.0" layoutY="58.0" onAction="#openRotorPopUp" ripplerFill="#ffffff00" styleClass="enigmaBtn">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <graphic>
+                              <Circle fill="#1f93ff00" radius="6.0" stroke="RED" strokeType="INSIDE" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </JFXButton>
+                        <Rectangle fill="#1a1a1a" height="142.0" layoutX="148.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="18.0" style="-fx-font-size: 9px;" styleClass="rotorPosViewUnder" text="${controller.cenPosUp4}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_CENTER" layoutX="172.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="18.0" style="-fx-font-size: 10px;" styleClass="rotorPosViewUnder" text="${controller.cenPosUp3}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="18.0" style="-fx-font-size: 11px;" styleClass="rotorPosViewUnder" text="${controller.cenPosUp2}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="18.0" style="-fx-font-size: 12px;" styleClass="rotorPosViewUnder" text="${controller.cenPosUp1}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="18.0" style="-fx-font-size: 9px;" styleClass="rotorPosViewUnder" text="${controller.cenPosDown4}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="18.0" style="-fx-font-size: 10px;" styleClass="rotorPosViewUnder" text="${controller.cenPosDown3}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="18.0" style="-fx-font-size: 11px;" styleClass="rotorPosViewUnder" text="${controller.cenPosDown2}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="172.0" layoutY="79.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="18.0" style="-fx-font-size: 12px;" styleClass="rotorPosViewUnder" text="${controller.cenPosDown1}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Rectangle fill="#1a1a1a" height="142.0" layoutX="96.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="79.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="18.0" style="-fx-font-size: 12px;" styleClass="rotorPosViewUnder" text="${controller.leftPosDown1}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="18.0" style="-fx-font-size: 11px;" styleClass="rotorPosViewUnder" text="${controller.leftPosDown2}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="18.0" style="-fx-font-size: 10px;" styleClass="rotorPosViewUnder" text="${controller.leftPosDown3}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="18.0" style="-fx-font-size: 9px;" styleClass="rotorPosViewUnder" text="${controller.leftPosDown4}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="18.0" style="-fx-font-size: 12px;" styleClass="rotorPosViewUnder" text="${controller.leftPosUp1}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="18.0" style="-fx-font-size: 11px;" styleClass="rotorPosViewUnder" text="${controller.leftPosUp2}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_CENTER" layoutX="120.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="18.0" style="-fx-font-size: 10px;" styleClass="rotorPosViewUnder" text="${controller.leftPosUp3}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="120.0" layoutY="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="18.0" style="-fx-font-size: 9px;" styleClass="rotorPosViewUnder" text="${controller.leftPosUp4}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_CENTER" layoutX="172.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="18.0" style="-fx-font-size: 14px;" styleClass="rotorPosViewUnder" text="${controller.cenPos}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="224.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="18.0" style="-fx-font-size: 14px;" styleClass="rotorPosViewUnder" text="${controller.rightPos}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_CENTER" layoutX="120.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="18.0" style="-fx-font-size: 14px;" styleClass="rotorPosViewUnder" text="${controller.leftPos}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <JFXButton buttonType="RAISED" layoutX="151.0" layoutY="58.0" onAction="#openRotorPopUp" ripplerFill="#ffffff00" styleClass="enigmaBtn">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <graphic>
+                              <Circle fill="#1f93ff00" radius="6.0" stroke="RED" strokeType="INSIDE" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="99.0" layoutY="58.0" onAction="#openRotorPopUp" ripplerFill="#ffffff00" styleClass="enigmaBtn">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <graphic>
+                              <Circle fill="#1f93ff00" radius="6.0" stroke="RED" strokeType="INSIDE" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </JFXButton>
+                        <Rectangle fill="SILVER" height="100.0" layoutX="253.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="60.0" />
+                        <Rectangle fill="SILVER" height="132.0" layoutX="43.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="53.0" />
+                        <Label layoutX="67.0" layoutY="62.0" text="B" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="9.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="103.0" layoutY="89.0" text="${controller.leftRotorSel}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="155.0" layoutY="89.0" text="${controller.centreRotorSel}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="206.0" layoutY="89.0" text="${controller.rightRotorSel}" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="lampPanel" layoutX="10.0" layoutY="159.0" prefHeight="116.0" prefWidth="359.0" />
+                  <Label fx:id="lampPU" alignment="CENTER" layoutX="15.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampYU" alignment="CENTER" layoutX="54.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampXU" alignment="CENTER" layoutX="93.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampCU" alignment="CENTER" layoutX="132.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampVU" alignment="CENTER" layoutX="171.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampBU" alignment="CENTER" layoutX="210.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampNU" alignment="CENTER" layoutX="249.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampMU" alignment="CENTER" layoutX="288.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampLU" alignment="CENTER" layoutX="327.0" layoutY="235.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampWU" alignment="CENTER" layoutX="54.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampOU" alignment="CENTER" layoutX="327.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampIU" alignment="CENTER" layoutX="288.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampUU" alignment="CENTER" layoutX="249.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampZU" alignment="CENTER" layoutX="210.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampEU" alignment="CENTER" layoutX="93.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampQU" alignment="CENTER" layoutX="15.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampRU" alignment="CENTER" layoutX="132.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampTU" alignment="CENTER" layoutX="171.0" layoutY="165.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampKU" alignment="CENTER" layoutX="308.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampJU" alignment="CENTER" layoutX="269.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampHU" alignment="CENTER" layoutX="230.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampGU" alignment="CENTER" layoutX="191.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampFU" alignment="CENTER" layoutX="152.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampDU" alignment="CENTER" layoutX="113.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampSU" alignment="CENTER" layoutX="74.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+                  <Label fx:id="lampAU" alignment="CENTER" layoutX="35.0" layoutY="200.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoardUnder" />
+               </children>
+               <padding>
+                  <Insets bottom="4.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane fx:id="mainHood" layoutX="67.0" layoutY="41.0" prefHeight="287.0" prefWidth="380.0" style="-fx-background-color: #1a1a1a; -fx-border-color: #000000;">
+               <children>
+                  <Label fx:id="lampP" alignment="CENTER" layoutX="15.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="P" textAlignment="CENTER" />
+                  <Label fx:id="lampY" alignment="CENTER" layoutX="54.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="Y" textAlignment="CENTER" />
+                  <Label fx:id="lampX" alignment="CENTER" layoutX="93.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="X" textAlignment="CENTER" />
+                  <Label fx:id="lampC" alignment="CENTER" layoutX="132.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="C" textAlignment="CENTER" />
+                  <Label fx:id="lampV" alignment="CENTER" layoutX="171.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="V" textAlignment="CENTER" />
+                  <Label fx:id="lampB" alignment="CENTER" layoutX="210.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="B" textAlignment="CENTER" />
+                  <Label fx:id="lampN" alignment="CENTER" layoutX="249.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="N" textAlignment="CENTER" />
+                  <Label fx:id="lampM" alignment="CENTER" layoutX="288.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="M" textAlignment="CENTER" />
+                  <Label fx:id="lampL" alignment="CENTER" layoutX="327.0" layoutY="230.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="L" textAlignment="CENTER" />
+                  <Label fx:id="lampW" alignment="CENTER" layoutX="54.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="W" textAlignment="CENTER" />
+                  <Label fx:id="lampO" alignment="CENTER" layoutX="327.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="O" textAlignment="CENTER" />
+                  <Label fx:id="lampI" alignment="CENTER" layoutX="288.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="I" textAlignment="CENTER" />
+                  <Label fx:id="lampU" alignment="CENTER" layoutX="249.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="U" textAlignment="CENTER" />
+                  <Label fx:id="lampZ" alignment="CENTER" layoutX="210.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="Z" textAlignment="CENTER" />
+                  <Label fx:id="lampE" alignment="CENTER" layoutX="93.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="E" textAlignment="CENTER" />
+                  <Label fx:id="lampQ" alignment="CENTER" layoutX="15.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="Q" textAlignment="CENTER" />
+                  <Label fx:id="lampR" alignment="CENTER" layoutX="132.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="R" textAlignment="CENTER" />
+                  <Label fx:id="lampT" alignment="CENTER" layoutX="171.0" layoutY="160.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="T" textAlignment="CENTER" />
+                  <Label fx:id="lampK" alignment="CENTER" layoutX="308.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="K" textAlignment="CENTER" />
+                  <Label fx:id="lampJ" alignment="CENTER" layoutX="269.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="J" textAlignment="CENTER" />
+                  <Label fx:id="lampH" alignment="CENTER" layoutX="230.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="H" textAlignment="CENTER" />
+                  <Label fx:id="lampG" alignment="CENTER" layoutX="191.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="G" textAlignment="CENTER" />
+                  <Label fx:id="lampF" alignment="CENTER" layoutX="152.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="F" textAlignment="CENTER" />
+                  <Label fx:id="lampD" alignment="CENTER" layoutX="113.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="D" textAlignment="CENTER" />
+                  <Label fx:id="lampS" alignment="CENTER" layoutX="74.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="S" textAlignment="CENTER" />
+                  <Label fx:id="lampA" alignment="CENTER" layoutX="35.0" layoutY="195.0" prefHeight="32.0" prefWidth="32.0" styleClass="lampBoard" text="A" textAlignment="CENTER" />
+                  <Ellipse fill="GREY" layoutX="138.0" layoutY="84.0" radiusX="18.0" radiusY="41.0" stroke="BLACK" strokeType="INSIDE" />
+                  <JFXButton buttonType="RAISED" layoutX="127.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#leftRotorDownButtonAction" prefHeight="19.0" prefWidth="22.0" ripplerFill="BLACK" rotate="180.0" styleClass="upArrow" />
+                  <JFXButton buttonType="RAISED" layoutX="127.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#leftRotorUpButtonAction" prefHeight="19.0" prefWidth="22.0" ripplerFill="BLACK" styleClass="upArrow" />
+                  <Ellipse fill="GREY" layoutX="187.0" layoutY="84.0" radiusX="18.0" radiusY="41.0" stroke="BLACK" strokeType="INSIDE" />
+                  <JFXButton buttonType="RAISED" layoutX="176.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#centreRotorDownButtonAction" prefHeight="19.0" prefWidth="22.0" ripplerFill="BLACK" rotate="180.0" styleClass="upArrow" />
+                  <JFXButton buttonType="RAISED" layoutX="176.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#centreRotorUpButtonAction" prefHeight="19.0" prefWidth="22.0" ripplerFill="BLACK" styleClass="upArrow" />
+                  <Ellipse fill="GREY" layoutX="236.0" layoutY="84.0" radiusX="18.0" radiusY="41.0" stroke="BLACK" strokeType="INSIDE" />
+                  <JFXButton buttonType="RAISED" layoutX="225.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#rightRotorDownButtonAction" prefHeight="19.0" prefWidth="22.0" ripplerFill="BLACK" rotate="180.0" styleClass="upArrow" />
+                  <JFXButton buttonType="RAISED" layoutX="348.0" layoutY="260.0" onAction="#onHoodOpen" ripplerFill="#ffffff00" styleClass="enigmaBtn">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                     <graphic>
+                        <Circle fill="#1f93ff00" radius="6.0" stroke="RED" strokeType="INSIDE" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </JFXButton>
+                  <Label alignment="CENTER" layoutX="224.0" layoutY="71.0" styleClass="rotorPosView" text="${controller.rightPos}" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="175.0" layoutY="71.0" styleClass="rotorPosView" text="${controller.cenPos}" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="126.0" layoutY="71.0" styleClass="rotorPosView" text="${controller.leftPos}" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="225.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#rightRotorUpButtonAction" prefHeight="19.0" prefWidth="22.0" ripplerFill="BLACK" styleClass="upArrow" />
+                  <AnchorPane fx:id="topPanel" layoutX="70.0" layoutY="29.0" prefHeight="110.0" prefWidth="240.0" style="-fx-background-color: #333333;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="56.0" layoutY="42.0" styleClass="rotorPosView" text="${controller.leftPos}" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>     
+                        </Label>
+                        <Label alignment="CENTER" layoutX="105.0" layoutY="42.0" styleClass="rotorPosView" text="${controller.cenPos}" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="154.0" layoutY="42.0" styleClass="rotorPosView" text="${controller.rightPos}" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <JFXButton buttonType="RAISED" layoutX="203.0" layoutY="81.0" onAction="#onPanelOpen" ripplerFill="#ffffff00" styleClass="enigmaBtn">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <graphic>
+                              <Circle fill="#1f93ff00" radius="6.0" stroke="RED" strokeType="INSIDE" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane fx:id="encryptionPath" layoutX="11.0" layoutY="14.0" mouseTransparent="true" prefHeight="509.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Rectangle fill="DODGERBLUE" height="16.0" layoutX="356.0" layoutY="468.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Label alignment="CENTER" layoutX="217.0" layoutY="158.0" text="${controller.enc3}" textAlignment="CENTER" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle fill="DODGERBLUE" height="3.0" layoutX="356.0" layoutY="482.0" stroke="TRANSPARENT" strokeType="INSIDE" width="85.0" />
+                  <Rectangle fill="DODGERBLUE" height="331.0" layoutX="440.0" layoutY="154.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Rectangle fill="DODGERBLUE" height="3.0" layoutX="121.0" layoutY="153.0" stroke="TRANSPARENT" strokeType="INSIDE" width="322.0" />
+                  <Rectangle fill="DODGERBLUE" height="48.0" layoutX="121.0" layoutY="108.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Rectangle fill="#2cc51b" height="29.0" layoutX="121.0" layoutY="81.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Rectangle fill="#2cc51b" height="3.0" layoutX="121.0" layoutY="80.0" stroke="TRANSPARENT" strokeType="INSIDE" width="337.0" />
+                  <Rectangle fill="#2cc51b" height="419.0" layoutX="457.0" layoutY="80.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Rectangle fill="#2cc51b" height="3.0" layoutX="329.0" layoutY="496.0" stroke="TRANSPARENT" strokeType="INSIDE" width="128.0" />
+                  <Rectangle fill="#2cc51b" height="31.0" layoutX="328.0" layoutY="468.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Rectangle fill="#2cc51b" height="3.0" layoutX="41.0" layoutY="371.0" stroke="TRANSPARENT" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fill="#2cc51b" height="95.0" layoutX="40.0" layoutY="279.0" stroke="TRANSPARENT" strokeType="INSIDE" width="3.0" />
+                  <Rectangle fill="#2cc51b" height="3.0" layoutX="40.0" layoutY="278.0" stroke="TRANSPARENT" strokeType="INSIDE" width="16.0" />
+                  <Label alignment="CENTER" layoutX="269.0" layoutY="158.0" text="${controller.enc2}" textAlignment="CENTER" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="165.0" layoutY="158.0" text="${controller.enc4}" textAlignment="CENTER" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="165.0" layoutY="58.0" text="${controller.enc6}" textAlignment="CENTER" textFill="#2cc51b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="217.0" layoutY="58.0" text="${controller.enc7}" textAlignment="CENTER" textFill="#2cc51b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="269.0" layoutY="58.0" text="${controller.enc8}" textAlignment="CENTER" textFill="#2cc51b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="122.0" layoutY="58.0" text="${controller.enc5}" textAlignment="CENTER" textFill="#2cc51b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="341.0" layoutY="465.0" text="${controller.enc1}" textAlignment="CENTER" textFill="DODGERBLUE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="313.0" text="${controller.enc9}" textAlignment="CENTER" textFill="#2cc51b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Polygon fill="#2cc51b" layoutX="42.0" layoutY="333.0" scaleX="0.2" scaleY="0.18" stroke="TRANSPARENT" strokeType="INSIDE">
+                    <points>
+                      <Double fx:value="-50.0" />
+                      <Double fx:value="40.0" />
+                      <Double fx:value="50.0" />
+                      <Double fx:value="40.0" />
+                      <Double fx:value="0.0" />
+                      <Double fx:value="-60.0" />
+                    </points>
+                  </Polygon>
+                  <Polygon fill="#2cc51b" layoutX="458.0" layoutY="314.0" rotate="180.0" scaleX="0.2" scaleY="0.18" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                     </points>
+                  </Polygon>
+                  <Polygon fill="DODGERBLUE" layoutX="403.0" layoutY="493.0" rotate="90.0" scaleX="0.2" scaleY="0.18" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                     </points>
+                  </Polygon>
+                  <Polygon fill="DODGERBLUE" layoutX="354.0" layoutY="165.0" rotate="270.0" scaleX="0.2" scaleY="0.18" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                     </points>
+                  </Polygon>
+                  <Polygon fill="#2cc51b" layoutX="123.0" layoutY="105.0" scaleX="0.2" scaleY="0.18" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                     </points>
+                  </Polygon>
+                  <Polygon fill="#2cc51b" layoutX="356.0" layoutY="91.0" rotate="90.0" scaleX="0.2" scaleY="0.18" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                     </points>
+                  </Polygon>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="69.0" layoutY="335.0" prefHeight="146.0" prefWidth="376.0" style="-fx-background-color: #1a1a1a; -fx-border-color: #000000;">
+               <children>
+                  <Button fx:id="keyA" alignment="CENTER" layoutX="27.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickA" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="A" textAlignment="CENTER" />
+                  <Button fx:id="keyQ" alignment="CENTER" layoutX="8.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickQ" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="Q" textAlignment="CENTER" />
+                  <Button fx:id="keyW" alignment="CENTER" layoutX="48.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickW" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="W" textAlignment="CENTER" />
+                  <Button fx:id="keyE" alignment="CENTER" layoutX="89.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickE" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="E" textAlignment="CENTER" />
+                  <Button fx:id="keyR" alignment="CENTER" layoutX="129.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickR" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="R" textAlignment="CENTER" />
+                  <Button fx:id="keyT" alignment="CENTER" layoutX="170.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickT" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="T" textAlignment="CENTER" />
+                  <Button fx:id="keyZ" alignment="CENTER" layoutX="210.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickZ" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="Z" textAlignment="CENTER" />
+                  <Button fx:id="keyU" alignment="CENTER" layoutX="251.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickU" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="U" textAlignment="CENTER" />
+                  <Button fx:id="keyI" alignment="CENTER" layoutX="291.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickI" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="I" textAlignment="CENTER" />
+                  <Button fx:id="keyO" alignment="CENTER" layoutX="332.0" layoutY="6.0" mnemonicParsing="false" onMousePressed="#onKeyClickO" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="O" textAlignment="CENTER" />
+                  <Button fx:id="keyL" alignment="CENTER" layoutX="332.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickL" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="L" textAlignment="CENTER" />
+                  <Button fx:id="keyM" alignment="CENTER" layoutX="291.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickM" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="M" textAlignment="CENTER" />
+                  <Button fx:id="keyN" alignment="CENTER" layoutX="251.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickN" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="N" textAlignment="CENTER" />
+                  <Button fx:id="keyB" alignment="CENTER" layoutX="210.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickB" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="B" textAlignment="CENTER" />
+                  <Button fx:id="keyV" alignment="CENTER" layoutX="170.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickV" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="V" textAlignment="CENTER" />
+                  <Button fx:id="keyC" alignment="CENTER" layoutX="129.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickC" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="C" textAlignment="CENTER" />
+                  <Button fx:id="keyX" alignment="CENTER" layoutX="89.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickX" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="X" textAlignment="CENTER" />
+                  <Button fx:id="keyY" alignment="CENTER" layoutX="48.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickY" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="Y" textAlignment="CENTER" />
+                  <Button fx:id="keyP" alignment="CENTER" layoutX="8.0" layoutY="82.0" mnemonicParsing="false" onMousePressed="#onKeyClickP" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="P" textAlignment="CENTER" />
+                  <Button fx:id="keyS" alignment="CENTER" layoutX="68.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickS" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="S" textAlignment="CENTER" />
+                  <Button fx:id="keyD" alignment="CENTER" layoutX="108.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickD" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="D" textAlignment="CENTER" />
+                  <Button fx:id="keyF" alignment="CENTER" layoutX="149.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickF" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="F" textAlignment="CENTER" />
+                  <Button fx:id="keyG" alignment="CENTER" layoutX="189.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickG" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="G" textAlignment="CENTER" />
+                  <Button fx:id="keyH" alignment="CENTER" layoutX="230.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickH" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="H" textAlignment="CENTER" />
+                  <Button fx:id="keyJ" alignment="CENTER" layoutX="271.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickJ" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="J" textAlignment="CENTER" />
+                  <Button fx:id="keyK" alignment="CENTER" layoutX="311.0" layoutY="44.0" mnemonicParsing="false" onMousePressed="#onKeyClickK" onMouseReleased="#onKeyRelease" styleClass="keyBoard" text="K" textAlignment="CENTER" />
+                  <JFXButton buttonType="RAISED" layoutX="176.0" layoutY="121.0" onAction="#openPlugboardPopUp" ripplerFill="#ffffff00" styleClass="enigmaBtn">
+                     <graphic>
+                        <Circle fill="#1f93ff00" radius="6.0" stroke="RED" strokeType="INSIDE" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" />
+               </padding>
+            </AnchorPane>
+            <JFXButton fx:id="closePanel" layoutX="93.0" onAction="#closePanel" prefHeight="40.0" prefWidth="329.0" styleClass="closeBtn" text="CLOSE PANEL" visible="false" />
+            <JFXButton fx:id="closeHood" layoutX="93.0" onAction="#closeHood" prefHeight="40.0" prefWidth="329.0" styleClass="closeBtn" text="CLOSE HOOD" visible="false" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

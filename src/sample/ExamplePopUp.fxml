@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="535.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ExamplePopUpController">
+   <children>
+      <JFXTextArea editable="false" focusColor="TRANSPARENT" layoutX="13.0" layoutY="14.0" prefHeight="188.0" prefWidth="274.0" text="The following examples will be in the format shown below: (text will turn green in correct answer is entered)&#10;&#10;Enigma Configuration - &#10;Rotors Used | Inner-Ring Settings | Plugboard Pairs&#10;&#10;Intercepted Message -&#10;Initial Rotor Position and Encrypted Message Key = Message" />
+      <AnchorPane fx:id="page1" layoutX="13.0" layoutY="213.0" prefHeight="359.0" prefWidth="268.0">
+         <children>
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutY="36.0" prefHeight="63.0" prefWidth="268.0" text="I IV II | 7 23 1 | GH AS IF EN XK LZ DQ WR UO PM&#10;&#10;DON WHW = RKHKN UHOIL" unFocusColor="#4d4d4d00" wrapText="true" />
+            <JFXTextArea fx:id="input1" layoutX="7.0" layoutY="109.0" onKeyReleased="#checkExample1" onMouseReleased="#checkExample1" prefHeight="25.0" prefWidth="256.0" promptText="Enter Decrypted Message Here" wrapText="true" />
+            <Label layoutY="150.0" text="Example 2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutY="175.0" prefHeight="83.0" prefWidth="268.0" text="V III I | 26 3 9 | ED UQ OR TG LC KV SA HN MY JX&#10;&#10;CRY WAD = ZUOIK VVSKY YPRQW OJPQH RFPYL DJFQB GBIBV CUCAG O" unFocusColor="#4d4d4d00" wrapText="true" />
+            <JFXTextArea fx:id="input2" layoutX="7.0" layoutY="269.0" onKeyReleased="#checkExample2" onMouseReleased="#checkExample2" prefHeight="25.0" prefWidth="256.0" promptText="Enter Decrypted Message Here" wrapText="true" />
+            <JFXButton layoutX="173.0" layoutY="321.0" onAction="#nextExamplesPage" style="-fx-border-color: black; -fx-border-radius: 3;" text="More Examples" />
+            <Label text="Example 1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="page2" layoutX="13.0" layoutY="213.0" prefHeight="359.0" prefWidth="268.0" visible="false">
+         <children>
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutX="1.0" layoutY="25.0" prefHeight="83.0" prefWidth="268.0" text="I IV V | 16 12 20 | WJ SO NQ VB ZU DH FT IK PE RY&#10;&#10;LON IUJ = AOVMI OLEKT ETLHK QVHNL HFTMZ MZ" unFocusColor="#4d4d4d00" wrapText="true" />
+            <Label text="Example 3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="input3" layoutX="7.0" layoutY="109.0" onKeyReleased="#checkExample3" onMouseReleased="#checkExample3" prefHeight="25.0" prefWidth="256.0" promptText="Enter Decrypted Message Here" wrapText="true" />
+            <Label layoutY="150.0" text="Example 4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextArea editable="false" focusColor="#405aa800" layoutY="175.0" prefHeight="83.0" prefWidth="268.0" text="III I II | 22 6 21 | TU ER BP JO FN KI AL VM QZ CX&#10;&#10;ENI UAI = HRRSU QINLP JBHIB QOYZE VUMYJ EOBGZ AMKZY UFIHY SY" unFocusColor="#4d4d4d00" wrapText="true" />
+            <JFXTextArea fx:id="input4" layoutX="7.0" layoutY="262.0" onKeyReleased="#checkExample4" onMouseReleased="#checkExample4" prefHeight="47.0" prefWidth="256.0" promptText="Enter Decrypted Message Here" wrapText="true" />
+            <JFXButton layoutY="321.0" onAction="#previousExamplesPage" style="-fx-border-color: black; -fx-border-radius: 3;" text="Previous Examples" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
